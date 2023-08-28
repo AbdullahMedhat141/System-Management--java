@@ -1,0 +1,397 @@
+@startuml
+
+package "com.example.system_management.controllers" #DDDDDD {
+class HelloController{
+- rootPane: AnchorPane
+  - wrongLogIn: Label
+  - navigation: Navigation
+  - model: DataModel
+  - name: TextField
+  - password: TextField
+
+  + logIn(): void
+}
+class ManagerController{
+  - rootPane: AnchorPane
+  - navigation: Navigation
+
+  + onStudents(): void
+  + onCourses(): void
+  + onAssistants(): void
+  + logOut(): void
+}
+class StudentsController implements javafx.fxml.Initializable{
+ - table: TableView<Student>
+  - rootPane: AnchorPane
+  - Name: TableColumn<Student, String>
+  - Id: TableColumn<Student, Integer>
+  - Address: TableColumn<Student, String>
+  - model: DataModel
+  - navigation: Navigation
+  - fileChooser: FileChooser
+
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+  + add(): void
+  + back(): void
+  + onClick(event: MouseEvent): void
+  + remove(event: ActionEvent): void
+  + save(event: MouseEvent): void
+  + saveStudents(file: File, students: ArrayList<Student>): void
+}
+class AddStudentController implements javafx.fxml.Initializable{
+- model: DataModel
+  - navigation: Navigation
+  - rootPane: AnchorPane
+  - name: TextField
+  - id: TextField
+  - address: TextField
+  - label: Label
+
+  + save(): void
+  + back(): void
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+}
+class CoursesController implements javafx.fxml.Initializable{
+- model: DataModel
+  - navigation: Navigation
+  - rootPane: AnchorPane
+  - table: TableView<Course>
+  - Name: TableColumn<Course, String>
+  - Instructor: TableColumn<Course, String>
+  - Book: TableColumn<Course, String>
+  - Room: TableColumn<Course, String>
+  - fileChooser: FileChooser
+
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+  + add(): void
+  + back(): void
+  + onClick(Event: MouseEvent): void
+  + remove(event: ActionEvent): void
+  + courseStudents(event: ActionEvent): void
+  + save2(event: MouseEvent): void
+  + saveCourses(file: File, courses: ArrayList<Course>): void
+}
+class AddCourseController implements javafx.fxml.Initializable{
+- model: DataModel
+  - navigation: Navigation
+  - rootPane: AnchorPane
+  - name: TextField
+  - instructor: TextField
+  - book: TextField
+  - room: TextField
+  - label: Label
+
+  + save(): void
+  + back(): void
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+}
+
+
+class FilesController implements javafx.fxml.Initializable{
+- navigation: Navigation
+  - model: DataModel
+  - rootPane: AnchorPane
+  - studentId: TextField
+  - nameCol: TableColumn<Student, String>
+  - idCol: TableColumn<Student, Integer>
+  - addressCol: TableColumn<Student, String>
+  - tableControl: TableView<Student>
+  - label: Label
+  - label2: Label
+  - fileChooser: FileChooser
+  - name: TableColumn<Student, String>
+  - id: TableColumn<Student, Integer>
+  - address: TableColumn<Student, String>
+  - table: TableView<Student>
+
+  + back(): void
+  + backToCourses(): void
+  + onAttendance(): void
+  + onAttendanceFiles(): void
+  + add(): void
+  + remove(event: ActionEvent): void
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+  + save(event: MouseEvent): void
+  + saveStudents(file: File, students: ArrayList<Student>): void
+}
+class Files2Controller implements javafx.fxml.Initializable{
+- navigation: Navigation
+  - model: DataModel
+  - rootPane: AnchorPane
+  - studentId: TextField
+  - nameCol: TableColumn<Student, String>
+  - idCol: TableColumn<Student, Integer>
+  - addressCol: TableColumn<Student, String>
+  - tableControl: TableView<Student>
+  - label: Label
+  - label2: Label
+  - fileChooser: FileChooser
+  - name: TableColumn<Student, String>
+  - id: TableColumn<Student, Integer>
+  - address: TableColumn<Student, String>
+  - table: TableView<Student>
+
+  + back(): void
+  + backToCourses(): void
+  + onAttendance2(): void
+  + onAttendanceFiles(): void
+  + add(): void
+  + remove(event: ActionEvent): void
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+  + save(event: MouseEvent): void
+  + saveStudents(file: File, students: ArrayList<Student>): void
+}
+class AllAssistantsController implements javafx.fxml.Initializable{
+- rootPane: AnchorPane
+  - model: DataModel
+  - navigation: Navigation
+  - table: TableView<Assistant>
+  - Name: TableColumn<Assistant, String>
+  - Course: TableColumn<Assistant, String>
+  - Password: TableColumn<Assistant, String>
+  - fileChooser: FileChooser
+
+  + back(): void
+  + add(): void
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+  + onClick(event: MouseEvent): void
+  + remove(event: ActionEvent): void
+  + save(event: MouseEvent): void
+  + saveAssistants(file: File, assistant: ArrayList<Assistant>): void
+}
+class AddAssistantController{
+- model: DataModel
+  - navigation: Navigation
+  - rootPane: AnchorPane
+  - name: TextField
+  - course: TextField
+  - password: TextField
+  - label: Label
+
+  + save(): void
+  + back(): void
+}
+
+class AssistantController{
+- rootPane: AnchorPane
+  - navigation: Navigation
+
+  + onFiles(): void
+  + onFiles2(): void
+  + logOut(): void
+}
+class AttendanceController implements javafx.fxml.Initializable{
+- model: DataModel
+  - myDate: LocalDate
+  - datePicker: DatePicker
+  - s: String
+  - string: String
+  - model2: DataModel
+  - navigation: Navigation
+  - table: TableView<Student>
+  - rootPane: AnchorPane
+  - nameCol: TableColumn<Student, String>
+  - idCol: TableColumn<Student, Integer>
+  - datesCol: TableColumn<Date, String>
+  - datesTable: TableView<Date>
+  - studentId: TextField
+  - label: Label
+  - label2: Label
+  - label3: Label
+  - fileChooser: FileChooser
+
+  + back(): void
+  + creat(): void
+  + add(): void
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+  + save2(event: MouseEvent): void
+  + copyFile(file: File, attendance: ArrayList<Student>): void
+  + remove(event: ActionEvent): void
+  + delete(event: ActionEvent): void
+}
+class Attendance2Controller implements javafx.fxml.Initializable{
+- model: DataModel
+  - myDate: LocalDate
+  - datePicker: DatePicker
+  - s: String
+  - string: String
+  - model2: DataModel
+  - navigation: Navigation
+  - table: TableView<Student>
+  - rootPane: AnchorPane
+  - nameCol: TableColumn<Student, String>
+  - idCol: TableColumn<Student, Integer>
+  - datesCol: TableColumn<Date, String>
+  - datesTable: TableView<Date>
+  - studentId: TextField
+  - label: Label
+  - label2: Label
+  - label3: Label
+  - fileChooser: FileChooser
+
+  + back(): void
+  + creat(): void
+  + add(): void
+  + initialize(url: URL, resourceBundle: ResourceBundle): void
+  + save2(event: MouseEvent): void
+  + copyFile(file: File, attendance: ArrayList<Student>): void
+  + remove(event: ActionEvent): void
+}
+}
+
+'*************************************************************************************
+package "com.example.system_management.models" #DDDDDD {
+  class Student implements java.io.Serializable{
+  - name: String
+          - id: int
+          - address: String
+
+          + Student()
+          + Student(name: String, id: int, address: String)
+          + getName(): String
+          + setName(name: String): void
+          + getId(): int
+          + setId(id: int): void
+          + getAddress(): String
+          + setAddress(address: String): void
+          + toString(): String
+  }
+  class Course implements java.io.Serializable{
+  - name: String
+          - instructor: String
+          - book: String
+          - room: String
+
+          + Course()
+          + Course(name: String, instructor: String, book: String, room: String)
+          + getName(): String
+          + setName(name: String): void
+          + getInstructor(): String
+          + setInstructor(instructor: String): void
+          + getBook(): String
+          + setBook(book: String): void
+          + getRoom(): String
+          + setRoom(room: String): void
+          + toString(): String
+  }
+  class Assistant implements java.io.Serializable{
+          - name: String
+          - course: String
+          - password: String
+
+          + Assistant()
+          + Assistant(name: String, course: String, password: String)
+          + getName(): String
+          + setName(name: String): void
+          + getCourse(): String
+          + setCourse(course: String): void
+          + getPassword(): String
+          + setPassword(password: String): void
+          + toString(): String
+  }
+  class Date implements java.io.Serializable{
+          - date: String
+
+          + Date(date: String)
+          + getDate(): String
+          + setDate(date: String): void
+          + toString(): String
+  }
+
+  class DataModel {
+      - students: ArrayList<Student>
+      - courses: ArrayList<Course>
+      - attendance: ArrayList<Student>
+      - dates: ArrayList<Date>
+      - assistants: ArrayList<Assistant>
+      - logicStudents: ArrayList<Student>
+      - JavaStudents: ArrayList<Student>
+
+      + DataModel()
+      + DataModel(s: String)
+      + initialize()
+      + initialize2()
+      + initialize4()
+      + initialize5()
+      + initialize6()
+      + initialize7()
+      + initialize3(string: String)
+      + save_Students()
+      + addStudent(student: Student)
+      + getStudentByName(name: String): Student
+      + getStudentById(id: int): Student
+      + getStudents(): ArrayList<Student>
+      + deleteStudentByName(name: String): Student
+      + deleteStudentById(id: int)
+      + save_Courses()
+      + addCourse(course: Course)
+      + getCourseByName(name: String): Course
+      + getCourses(): ArrayList<Course>
+      + deleteCourseByName(name: String)
+      + initialize3(string: String)
+      + save_allStudents(string: String)
+      + addOneStudent(student: Student)
+      + getOneStudentById(id: int): Student
+      + getAllStudents(): ArrayList<Student>
+      + deleteOneStudentById(id: int)
+      + initialize4()
+      + getAllDates(): ArrayList<Date>
+      + addDate(d: Date)
+      + save_Dates()
+      + deleteDateByName(string: String)
+      + initialize5()
+      + save_Assistants()
+      + addAssistant(assistant: Assistant)
+      + getAssistantByName(name: String): Assistant
+      + getAssistants(): ArrayList<Assistant>
+      + deleteAssistantByName(name: String)
+      + initialize6()
+      + save_LogicStudents()
+      + addLogicStudent(student: Student)
+      + getLogicStudentById(id: int): Student
+      + getLogicStudents(): ArrayList<Student>
+      + deleteLogicStudentById(id: int)
+      + initialize7()
+      + save_JavaStudents()
+      + addJavaStudent(student: Student)
+      + getJavaStudentById(id: int): Student
+      + getJavaStudents(): ArrayList<Student>
+      + deleteJavaStudentById(id: int)
+  }
+
+
+}
+
+
+'*************************************************************************************
+package "com.example.system_management" #DDDDDD {
+class HelloApplication extends javafx.application.Application{
+  +start(stage: Stage): void
+  +main(args: String[]): void
+}
+class Navigation{
+  - MAIN_FXML: String
+  - ADD_STUDENT_FXML: String
+  - SHOW_STUDENTS_FXML: String
+  - ADD_COURSE_FXML: String
+  - SHOW_COURSES_FXML: String
+  - Manager_FXML: String
+  - Assistant_FXML: String
+  - Attendance_FXML: String
+  - Attendance2_FXML: String
+  - Files_FXML: String
+  - Files2_FXML: String
+  - AttendanceFiles_FXML: String
+  - ALLAssistants_FXML: String
+  - ADDAssistant_FXML: String
+  - ADDCourseStudents_FXML: String
+  - ADDCourse2Students_FXML: String
+
+  + navigateTo(rootPane: Parent, path: String): void
+}
+
+}
+
+
+
+@enduml

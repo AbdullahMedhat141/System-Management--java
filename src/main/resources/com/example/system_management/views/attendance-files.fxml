@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.system_management.controllers.AttendanceController">
+   <children>
+      <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #555;" text="Back" textFill="#15cbef" />
+      <TableView fx:id="datesTable" editable="true" layoutY="59.0" onMouseClicked="#save2" prefHeight="340.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="datesCol" prefWidth="598.3999633789062" text="Lecture Date" />
+        </columns>
+      </TableView>
+      <Button layoutX="519.0" layoutY="14.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #15cbef;" text="Delete" textFill="WHITE" />
+   </children>
+</AnchorPane>

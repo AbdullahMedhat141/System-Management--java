@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.system_management.controllers.FilesController">
+   <children>
+      <TableView fx:id="tableControl" editable="true" layoutY="51.0" prefHeight="276.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="nameCol" prefWidth="197.60003662109375" text="Name" />
+            <TableColumn fx:id="idCol" prefWidth="199.199951171875" text="ID" />
+            <TableColumn fx:id="addressCol" prefWidth="202.40008544921875" text="Address" />
+         </columns>
+      </TableView>
+      <TextField fx:id="studentId" layoutX="14.0" layoutY="356.0" prefHeight="26.0" prefWidth="232.0" promptText="Enter student Id" />
+      <Label layoutX="397.0" layoutY="14.0" prefHeight="27.0" prefWidth="154.0" text="Add Logic Student" textFill="#15cbef">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="273.0" layoutY="356.0" mnemonicParsing="false" onAction="#add" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #15cbef;" text="Add" textFill="WHITE" />
+      <Button layoutX="340.0" layoutY="356.0" mnemonicParsing="false" onAction="#remove" style="-fx-background-color: #15cbef;" text="Remove" textFill="WHITE" />
+      <Button layoutX="22.0" layoutY="15.0" mnemonicParsing="false" onAction="#backToCourses" style="-fx-background-color: #555;" text="Back" textFill="#15cbef" />
+      <Label fx:id="label" layoutX="71.0" layoutY="329.0" prefHeight="18.0" prefWidth="118.0" textFill="RED" />
+      <Label fx:id="label2" layoutX="71.0" layoutY="329.0" prefHeight="18.0" prefWidth="118.0" textFill="GREEN" />
+      <Button layoutX="83.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#save" style="-fx-background-color: #15cbef;" text="Download" textFill="WHITE" />
+   </children>
+</AnchorPane>

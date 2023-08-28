@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.system_management.controllers.Attendance2Controller">
+   <children>
+      <TableView fx:id="table" editable="true" layoutY="51.0" prefHeight="267.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="nameCol" prefWidth="304.800048828125" text="Name" />
+            <TableColumn fx:id="idCol" prefWidth="294.39996337890625" text="ID" />
+         </columns>
+      </TableView>
+      <TextField fx:id="studentId" layoutX="14.0" layoutY="356.0" prefHeight="26.0" prefWidth="232.0" promptText="Enter student Id" />
+      <Label layoutX="58.0" layoutY="13.0" prefHeight="27.0" prefWidth="92.0" text="Attendance" textFill="#15cbef">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="273.0" layoutY="356.0" mnemonicParsing="false" onAction="#add" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #15cbef;" text="Add" textFill="WHITE" />
+      <Button layoutX="340.0" layoutY="356.0" mnemonicParsing="false" onAction="#remove" style="-fx-background-color: #15cbef;" text="Remove" textFill="WHITE" />
+      <Button layoutX="536.0" layoutY="356.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #555;" text="Back" textFill="#15cbef" />
+      <Label fx:id="label" layoutX="71.0" layoutY="329.0" prefHeight="18.0" prefWidth="118.0" textFill="RED" />
+      <DatePicker fx:id="datePicker" layoutX="399.0" layoutY="14.0" promptText="Today's date" />
+      <Button layoutX="347.0" layoutY="14.0" mnemonicParsing="false" onAction="#creat" style="-fx-background-color: #15cbef;" text="Creat" textFill="WHITE" />
+      <Label fx:id="label2" layoutX="71.0" layoutY="329.0" prefHeight="18.0" prefWidth="118.0" textFill="GREEN" />
+      <Label fx:id="label3" layoutX="246.0" layoutY="17.0" prefHeight="18.0" prefWidth="75.0" textFill="GREEN" />
+   </children>
+</AnchorPane>

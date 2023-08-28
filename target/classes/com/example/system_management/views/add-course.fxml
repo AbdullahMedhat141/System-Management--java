@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.system_management.controllers.AddCourseController">
+   <children>
+      <Label layoutX="124.0" layoutY="118.0" text="Name" textFill="#15cbef">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="240.0" layoutY="47.0" text="Add Course" textFill="#15cbef">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" layoutX="205.0" layoutY="119.0" prefHeight="26.0" prefWidth="250.0" promptText="Name" />
+      <Label layoutX="110.0" layoutY="172.0" text="Instructor" textFill="#15cbef">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="128.0" layoutY="222.0" text="Book" textFill="#15cbef">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="instructor" layoutX="205.0" layoutY="173.0" prefHeight="26.0" prefWidth="250.0" promptText="Instructor" />
+      <TextField fx:id="book" layoutX="205.0" layoutY="223.0" prefHeight="26.0" prefWidth="250.0" promptText="Book" />
+      <Button layoutX="485.0" layoutY="322.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #15cbef;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="124.0" layoutY="269.0" text="Room" textFill="#15cbef">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="room" layoutX="205.0" layoutY="270.0" prefHeight="26.0" prefWidth="250.0" promptText="Room" />
+      <Label fx:id="label" layoutX="255.0" layoutY="309.0" prefHeight="26.0" prefWidth="128.0" textFill="GREEN">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="67.0" layoutY="322.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #555;" text="Back" textFill="#15cbef">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

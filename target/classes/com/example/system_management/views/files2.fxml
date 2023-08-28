@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.system_management.controllers.Files2Controller">
+   <children>
+      <Button layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="46.0" style="-fx-background-color: #555;" text="Back" textFill="#15cbef" />
+      <Label layoutX="412.0" layoutY="4.0" prefHeight="50.0" prefWidth="162.0" text="Java Students" textFill="#15cbef">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="447.0" layoutY="355.0" mnemonicParsing="false" onAction="#onAttendanceFiles" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: #15cbef;" text="Attendance files" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table" layoutY="64.0" prefHeight="282.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="name" prefWidth="191.20001828670502" text="Name" />
+            <TableColumn fx:id="id" prefWidth="207.199951171875" text="ID" />
+            <TableColumn fx:id="address" prefWidth="199.20004272460938" text="Address" />
+         </columns>
+      </TableView>
+      <Button layoutX="82.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="30.0" prefWidth="71.0" style="-fx-background-color: #15cbef;" text="Download" textFill="WHITE" />
+      <Button layoutX="19.0" layoutY="355.0" mnemonicParsing="false" onAction="#onAttendance2" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: #15cbef;" text="Take Attendance" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
